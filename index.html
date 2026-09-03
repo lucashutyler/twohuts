@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Two Huts · Lucas Hutyler</title>
+  <meta name="description" content="Lucas Hutyler — software engineer since 2011. Two huts on a beach: one is me, the other is whoever I get to build with next.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f5e6c8'/%3E%3Cpath d='M8 30 L20 14 L32 30 Z M32 30 L44 14 L56 30 Z' fill='%23b8743a'/%3E%3Crect x='12' y='30' width='16' height='14' fill='%23e0b880'/%3E%3Crect x='36' y='30' width='16' height='14' fill='%23e0b880'/%3E%3Crect x='0' y='46' width='64' height='18' fill='%23d9c39a'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#top">two<span>huts</span></a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#second-hut">The second hut</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="scene" aria-hidden="true">
+      <svg viewBox="0 0 1200 620" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#fbe3b6"/>
+            <stop offset="0.55" stop-color="#f9c98a"/>
+            <stop offset="1" stop-color="#f4a86d"/>
+          </linearGradient>
+          <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2f8fa3"/>
+            <stop offset="1" stop-color="#63c1c5"/>
+          </linearGradient>
+          <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f3dfb5"/>
+            <stop offset="1" stop-color="#e6c894"/>
+          </linearGradient>
+          <linearGradient id="roof" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#c98a4b"/>
+            <stop offset="1" stop-color="#9a5f2c"/>
+          </linearGradient>
+          <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f0d3a3"/>
+            <stop offset="1" stop-color="#d7ae74"/>
+          </linearGradient>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="18"/>
+          </filter>
+
+          <!-- One hut, reused twice -->
+          <g id="hut">
+            <!-- stilts -->
+            <rect x="-62" y="40" width="9" height="46" fill="#7a4a24"/>
+            <rect x="-22" y="40" width="9" height="46" fill="#7a4a24"/>
+            <rect x="18" y="40" width="9" height="46" fill="#7a4a24"/>
+            <rect x="53" y="40" width="9" height="46" fill="#7a4a24"/>
+            <!-- deck -->
+            <rect x="-80" y="34" width="160" height="8" rx="2" fill="#8d5a2e"/>
+            <!-- walls -->
+            <rect x="-64" y="-40" width="128" height="76" fill="url(#wall)"/>
+            <!-- wall boards -->
+            <g stroke="#c89a63" stroke-width="1.2" opacity=".55">
+              <line x1="-64" y1="-25" x2="64" y2="-25"/>
+              <line x1="-64" y1="-10" x2="64" y2="-10"/>
+              <line x1="-64" y1="5" x2="64" y2="5"/>
+              <line x1="-64" y1="20" x2="64" y2="20"/>
+            </g>
+            <!-- door -->
+            <rect x="-14" y="-16" width="28" height="52" rx="3" fill="#6f4222"/>
+            <circle cx="8" cy="12" r="2" fill="#e9c07a"/>
+            <!-- windows -->
+            <rect x="-52" y="-24" width="24" height="22" rx="2" fill="#8fd3df"/>
+            <rect x="28" y="-24" width="24" height="22" rx="2" fill="#8fd3df"/>
+            <g stroke="#7a4a24" stroke-width="2">
+              <line x1="-40" y1="-24" x2="-40" y2="-2"/>
+              <line x1="-52" y1="-13" x2="-28" y2="-13"/>
+              <line x1="40" y1="-24" x2="40" y2="-2"/>
+              <line x1="28" y1="-13" x2="52" y2="-13"/>
+            </g>
+            <!-- roof -->
+            <path d="M-92 -36 L0 -112 L92 -36 Z" fill="url(#roof)"/>
+            <!-- thatch lines -->
+            <g stroke="#7d4a20" stroke-width="2" opacity=".5" stroke-linecap="round">
+              <line x1="-70" y1="-46" x2="-52" y2="-36"/>
+              <line x1="-46" y1="-66" x2="-30" y2="-56"/>
+              <line x1="-22" y1="-86" x2="-8" y2="-76"/>
+              <line x1="70" y1="-46" x2="52" y2="-36"/>
+              <line x1="46" y1="-66" x2="30" y2="-56"/>
+              <line x1="22" y1="-86" x2="8" y2="-76"/>
+            </g>
+            <!-- roof fringe -->
+            <path d="M-96 -34 q6 8 12 0 q6 8 12 0 q6 8 12 0 q6 8 12 0 q6 8 12 0 q6 8 12 0 q6 8 12 0 q6 8 12 0 q6 8 12 0 q6 8 12 0 q6 8 12 0 q6 8 12 0 q6 8 12 0 q6 8 12 0 q6 8 12 0 q6 8 12 0" fill="none" stroke="#7d4a20" stroke-width="2.5"/>
+            <!-- steps -->
+            <rect x="-18" y="42" width="36" height="8" fill="#8d5a2e"/>
+            <rect x="-18" y="58" width="36" height="8" fill="#8d5a2e"/>
+            <rect x="-18" y="74" width="36" height="8" fill="#8d5a2e"/>
+          </g>
+
+          <g id="palm">
+            <path d="M0 0 C-6 -60 -4 -120 10 -180" stroke="#7a4a24" stroke-width="10" fill="none" stroke-linecap="round"/>
+            <g fill="#2f7d4f">
+              <path d="M10 -180 C-40 -200 -80 -190 -110 -150 C-70 -160 -30 -160 10 -180Z"/>
+              <path d="M10 -180 C60 -200 100 -190 130 -150 C90 -160 50 -160 10 -180Z"/>
+              <path d="M10 -180 C-30 -230 -70 -240 -100 -230 C-60 -215 -20 -200 10 -180Z"/>
+              <path d="M10 -180 C50 -230 90 -240 120 -230 C80 -215 40 -200 10 -180Z"/>
+              <path d="M10 -180 C0 -240 -10 -260 -20 -270 C0 -250 10 -220 10 -180Z"/>
+              <path d="M10 -180 C20 -240 30 -260 40 -270 C20 -250 10 -220 10 -180Z"/>
+            </g>
+            <circle cx="4" cy="-176" r="6" fill="#8a5a2a"/>
+            <circle cx="16" cy="-174" r="6" fill="#8a5a2a"/>
+          </g>
+        </defs>
+
+        <!-- sky -->
+        <rect width="1200" height="620" fill="url(#sky)"/>
+
+        <!-- sun -->
+        <circle cx="900" cy="230" r="110" fill="#ffd27a" opacity=".5" filter="url(#glow)"/>
+        <circle cx="900" cy="230" r="64" fill="#ffd98a"/>
+
+        <!-- clouds -->
+        <g fill="#fff6e6" opacity=".9">
+          <ellipse cx="220" cy="120" rx="70" ry="22"/>
+          <ellipse cx="260" cy="108" rx="48" ry="26"/>
+          <ellipse cx="180" cy="112" rx="40" ry="20"/>
+          <ellipse cx="640" cy="90" rx="60" ry="18"/>
+          <ellipse cx="675" cy="80" rx="40" ry="22"/>
+        </g>
+
+        <!-- gulls -->
+        <g fill="none" stroke="#7a5a3a" stroke-width="2.2" stroke-linecap="round">
+          <path d="M520 150 q10 -10 20 0 q10 -10 20 0"/>
+          <path d="M575 180 q8 -8 16 0 q8 -8 16 0"/>
+          <path d="M480 190 q7 -7 14 0 q7 -7 14 0"/>
+        </g>
+
+        <!-- sea -->
+        <rect x="0" y="330" width="1200" height="120" fill="url(#sea)"/>
+        <g fill="none" stroke="#e8fbff" stroke-width="2" opacity=".55">
+          <path class="wave w1" d="M-40 360 q30 -8 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
+          <path class="wave w2" d="M-40 392 q30 -8 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
+          <path class="wave w3" d="M-40 424 q30 -8 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
+        </g>
+
+        <!-- sand -->
+        <path d="M0 450 C200 425 400 470 600 445 C800 420 1000 465 1200 440 L1200 620 L0 620 Z" fill="url(#sand)"/>
+        <!-- wet sand line / foam -->
+        <path d="M0 450 C200 425 400 470 600 445 C800 420 1000 465 1200 440" fill="none" stroke="#fffaf0" stroke-width="6" opacity=".8"/>
+
+        <!-- palms -->
+        <use href="#palm" x="100" y="560"/>
+        <use href="#palm" x="1120" y="575" transform="scale(-1,1) translate(-2240,0)"/>
+
+        <!-- huts -->
+        <g class="hut hut-me" data-hut="me" tabindex="0" role="button" aria-label="Lucas's hut" transform="translate(380 480)">
+          <ellipse cx="0" cy="92" rx="110" ry="10" fill="#c9a874" opacity=".5"/>
+          <use href="#hut"/>
+          <!-- sign -->
+          <rect x="-40" y="-2" width="80" height="0" fill="none"/>
+        </g>
+
+        <g class="hut hut-you" data-hut="you" tabindex="0" role="button" aria-label="The second hut" transform="translate(820 500)">
+          <ellipse cx="0" cy="92" rx="110" ry="10" fill="#c9a874" opacity=".5"/>
+          <use href="#hut"/>
+          <!-- question mark sign hanging on the door -->
+          <g class="sign">
+            <rect x="-13" y="-8" width="26" height="26" rx="4" fill="#fff6e6" stroke="#7a4a24" stroke-width="2"/>
+            <text x="0" y="12" text-anchor="middle" font-size="20" font-weight="700" fill="#7a4a24" font-family="Georgia, serif">?</text>
+          </g>
+        </g>
+
+        <!-- footprints between huts -->
+        <g fill="#c9a874" opacity=".7">
+          <ellipse cx="520" cy="585" rx="5" ry="8" transform="rotate(-20 520 585)"/>
+          <ellipse cx="545" cy="595" rx="5" ry="8" transform="rotate(-20 545 595)"/>
+          <ellipse cx="575" cy="588" rx="5" ry="8" transform="rotate(-20 575 588)"/>
+          <ellipse cx="600" cy="598" rx="5" ry="8" transform="rotate(-20 600 598)"/>
+          <ellipse cx="630" cy="590" rx="5" ry="8" transform="rotate(-20 630 590)"/>
+          <ellipse cx="655" cy="600" rx="5" ry="8" transform="rotate(-20 655 600)"/>
+          <ellipse cx="685" cy="592" rx="5" ry="8" transform="rotate(-20 685 592)"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero-copy">
+      <p class="eyebrow">twohuts.com</p>
+      <h1 id="hero-title">Lucas Hutyler</h1>
+      <p class="lede">Software engineer since 2011. Happiest building things with other people.</p>
+      <p class="hint">Hover or tap a hut.</p>
+    </div>
+
+    <div class="hut-captions" aria-live="polite">
+      <div class="caption" data-for="me">
+        <strong>This hut is mine.</strong>
+        I've been writing software professionally since 2011. Still enjoy it.
+      </div>
+      <div class="caption" data-for="you">
+        <strong>This one is open.</strong>
+        My dad, my mom, my wife, my brothers, my kids, a colleague, maybe you. Whoever I get to build with next.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section">
+    <div class="wrap">
+      <h2>Who I am</h2>
+      <div class="prose two-col">
+        <div>
+          <p>I'm Lucas. I've been a software engineer since 2011, which is long enough to have strong opinions and long enough to have had most of them proven wrong at least once.</p>
+          <p>This site isn't a résumé. It's more of a front porch. A place to say who I am, what I'm working on, and why the domain has "two" in it.</p>
+          <!-- TODO(lucas): how you got here, what you were doing before 2011 -->
+        </div>
+        <div>
+          <p class="placeholder">Coming soon: hobbies, how I got into this, what I do when I'm not at a keyboard.</p>
+          <!-- TODO(lucas): hobbies, family, where you live, anything that isn't work -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section alt">
+    <div class="wrap">
+      <h2>Things I'm building</h2>
+      <p class="section-intro">Current projects. Each of these has other people in it, which is the point.</p>
+
+      <ul class="cards">
+        <li class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M8 36h10v-8h10v-8h10v-8" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 40h32" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Stepply</h3>
+          <p class="placeholder">One or two sentences about what Stepply is and who it's for.</p>
+          <!-- TODO(lucas): description, link, role -->
+        </li>
+
+        <li class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15" fill="none" stroke="currentColor" stroke-width="3.5"/><path d="M24 9c-6 5-6 25 0 30M24 9c6 5 6 25 0 30M9 24h30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Zenosource</h3>
+          <p class="placeholder">One or two sentences about what Zenosource is and who it's for.</p>
+          <!-- TODO(lucas): description, link, role -->
+        </li>
+
+        <li class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M10 34l6-18h16l6 18z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><circle cx="24" cy="12" r="4" fill="currentColor"/><path d="M14 40h20" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Idle Party</h3>
+          <p class="placeholder">One or two sentences about what Idle Party is and who it's for.</p>
+          <!-- TODO(lucas): description, link, role -->
+        </li>
+
+        <li class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><rect x="8" y="10" width="32" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="3.5"/><path d="M14 18h6M14 24h6M14 30h6M28 18h6M28 24h6M28 30h6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Amphenol Network Solutions</h3>
+          <p class="placeholder">Work on their nrgSMART panels. One or two sentences about what that involves.</p>
+          <!-- TODO(lucas): description, link, role -->
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SECOND HUT ============ -->
+  <section id="second-hut" class="section">
+    <div class="wrap narrow">
+      <h2>About that second hut</h2>
+      <div class="prose">
+        <p>"Two huts" started as "two Hutylers." I picked the name before I'd figured out who the second one was, and honestly, I never did.</p>
+        <p>That turned out to be the right answer. The second hut has been my father, my mother, my wife, my brothers, my children, and plenty of people who don't share my last name. A project is simply more fun with someone else in it, and finishing something is better when there's somebody to share the finish with.</p>
+        <p>So the second hut stays open. If you're working on something and want company, the door's unlocked.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>© <span id="year"></span> Lucas Hutyler · twohuts.com</p>
+    <!-- TODO(lucas): links (GitHub, LinkedIn, email) -->
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
