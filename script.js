@@ -36,7 +36,7 @@
   var WIDE = '0 0 1200 620', NARROW = '200 110 800 510';
   function fitScene() {
     if (!svg) return;
-    var narrow = window.innerWidth < 720;
+    var narrow = window.innerWidth < 960;
     svg.setAttribute('viewBox', narrow ? NARROW : WIDE);
     svg.setAttribute('preserveAspectRatio', narrow ? 'xMidYMax meet' : 'xMidYMax slice');
   }

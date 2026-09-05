@@ -83,7 +83,9 @@ p { margin: 0 0 1em; }
   z-index: 2;
   padding: clamp(5rem, 14vh, 9rem) 1.5rem 0;
   max-width: 560px;
+  pointer-events: none;
 }
+.hero-copy > * { pointer-events: auto; width: fit-content; }
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: .18em;
@@ -109,8 +111,14 @@ p { margin: 0 0 1em; }
 }
 
 /* hut interaction */
-.hut { cursor: pointer; transition: transform .25s ease; transform-box: fill-box; transform-origin: 50% 100%; outline: none; }
-.hut:hover, .hut:focus-visible, .hut.active { filter: drop-shadow(0 6px 10px rgba(80,40,10,.25)); }
+.hut { cursor: pointer; outline: none; }
+.hut .hut-body { transition: transform .25s ease, filter .25s ease; }
+.hut .shadow { transition: transform .25s ease, opacity .25s ease; }
+.hut:hover .hut-body, .hut:focus-visible .hut-body, .hut.active .hut-body {
+  transform: translateY(-8px);
+  filter: drop-shadow(0 10px 8px rgba(80, 40, 10, .28));
+}
+.hut:hover .shadow, .hut:focus-visible .shadow, .hut.active .shadow { transform: scale(1.06); transform-origin: center; opacity: .35; }
 .hut .sign { animation: sway 3s ease-in-out infinite; transform-origin: 0 -8px; }
 @keyframes sway {
   0%, 100% { transform: rotate(-4deg); }
@@ -132,7 +140,9 @@ p { margin: 0 0 1em; }
   z-index: 2;
   padding: 0 1.5rem 1.5rem;
   min-height: 5.5rem;
+  pointer-events: none;
 }
+.caption.show { pointer-events: auto; }
 .caption {
   display: none;
   background: rgba(255, 250, 240, .92);
@@ -184,6 +194,42 @@ p { margin: 0 0 1em; }
 .card-icon svg { width: 100%; height: 100%; }
 .card p { font-size: .95rem; margin: 0; }
 
+/* ---------- people ---------- */
+.people {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem 2.5rem;
+}
+.people li { border-top: 2px solid var(--sand-deep); padding-top: 1rem; }
+.people h3 { color: var(--wood); margin-bottom: .3rem; }
+.people p { margin: 0; color: var(--ink-soft); }
+.aside h3 { color: var(--wood); font-size: 1.1rem; }
+.plain-list { padding-left: 1.1rem; margin: 0; color: var(--ink-soft); }
+.plain-list li { margin-bottom: .35rem; }
+
+.button {
+  display: inline-block;
+  background: var(--sea-deep);
+  color: #fff;
+  text-decoration: none;
+  padding: .7rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: background .2s ease, transform .2s ease;
+}
+.button:hover { background: var(--sea); transform: translateY(-1px); }
+
+/* ---------- subpages ---------- */
+.subpage .topbar { position: sticky; background: var(--sand); border-bottom: 1px solid var(--sand-deep); }
+.subpage .topbar a[aria-current="page"] { text-decoration: underline; }
+.page-head { padding-bottom: 1.5rem; }
+.page-head h1 { font-size: clamp(2rem, 4vw, 3rem); }
+.card .meta { margin-top: .9rem; font-size: .85rem; color: var(--wood); }
+.card p + p { margin-top: .6rem; }
+
 /* ---------- footer ---------- */
 .footer {
   background: var(--wood);
@@ -191,16 +237,27 @@ p { margin: 0 0 1em; }
   padding: 1.5rem 0;
   font-size: .9rem;
 }
+.footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; }
 .footer p { margin: 0; }
+.footer .links a { color: #f3e3c8; margin-right: 1.25rem; }
+.footer .links a:last-child { margin-right: 0; }
 
 /* ---------- responsive ---------- */
-@media (max-width: 720px) {
-  .topbar { padding: .85rem 1rem; }
-  .topbar nav a { margin-left: .8rem; font-size: .85rem; }
+/* Below 960px the scene is cropped to the huts and sits under the copy (see script.js). */
+@media (max-width: 959px) {
   .hero { min-height: 92svh; }
-  .prose.two-col { grid-template-columns: 1fr; gap: 1rem; }
-  .hero-copy { padding-top: 4.5rem; }
+  .hero-copy { padding-top: 5rem; max-width: none; }
   .scene { top: auto; height: 62%; }
   .hut-captions { min-height: 0; }
   .caption { font-size: .92rem; }
+}
+@media (max-width: 720px) {
+  .topbar { padding: .85rem 1rem; }
+  .topbar nav a { margin-left: .8rem; font-size: .85rem; }
+  .prose.two-col { grid-template-columns: 1fr; gap: 1rem; }
+  .hero-copy { padding-top: 4.5rem; }
+}
+@media (max-width: 420px) {
+  .topbar nav a { margin-left: .6rem; font-size: .78rem; }
+  .brand { font-size: 1.15rem; }
 }
