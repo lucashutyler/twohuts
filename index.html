@@ -124,9 +124,9 @@
 
         <!-- gulls: kept right of the headline column -->
         <g fill="none" stroke="#7a5a3a" stroke-width="2.2" stroke-linecap="round">
-          <path d="M700 268 q10 -10 20 0 q10 -10 20 0"/>
-          <path d="M760 296 q8 -8 16 0 q8 -8 16 0"/>
-          <path d="M672 306 q7 -7 14 0 q7 -7 14 0"/>
+          <g class="gull gull1"><path d="M700 268 q10 -10 20 0 q10 -10 20 0"/></g>
+          <g class="gull gull2"><path d="M760 296 q8 -8 16 0 q8 -8 16 0"/></g>
+          <g class="gull gull3"><path d="M672 306 q7 -7 14 0 q7 -7 14 0"/></g>
         </g>
 
         <!-- sea -->
@@ -135,6 +135,26 @@
           <path class="wave w1" d="M-240 360 q30 -8 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
           <path class="wave w2" d="M-240 392 q30 -8 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
           <path class="wave w3" d="M-240 424 q30 -8 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0"/>
+        </g>
+
+        <!-- snorkeler, drifting back and forth in the sea -->
+        <g clip-path="url(#sea-clip)">
+          <g transform="translate(600 378)">
+            <g class="snorkeler">
+              <g class="bob">
+                <g class="flutter">
+                  <path d="M-14 5 q-10 5 -16 13 q9 -1 17 -5z" fill="#e8823c"/>
+                  <path d="M-14 8 q-10 -1 -18 4 q9 5 18 3z" fill="#c9682c"/>
+                </g>
+                <ellipse cx="-22" cy="6" rx="11" ry="3" fill="#eef9fb" opacity=".55"/>
+                <ellipse cx="-33" cy="6" rx="7" ry="2.2" fill="#eef9fb" opacity=".35"/>
+                <ellipse cx="0" cy="1" rx="8" ry="5.5" fill="#f1c9a5"/>
+                <rect x="-5" y="-2" width="11" height="5.5" rx="2.2" fill="#2b6e8a"/>
+                <path d="M6 -2 q8 -3 6 -15" stroke="#2b6e8a" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <circle cx="12.5" cy="-17" r="2.3" fill="#2b6e8a"/>
+              </g>
+            </g>
+          </g>
         </g>
 
         <!-- sand -->
@@ -324,11 +344,11 @@
         </li>
         <li data-tag="Wife" data-color="#b8437a">
           <h3>My wife</h3>
-          <p>The most important person in the other hut, and the one who has heard "so I had an idea" more times than anyone alive. I owe this page a proper paragraph about her, and she knows it.</p>
+          <p>The one who has heard "so I had an idea" more times than anyone alive, and the one I've built the most with: raising our kids together, building a home together, all the ordinary days that turn out to be the actual project. Every other hut in this section exists because she's been steady in this one.</p>
         </li>
         <li data-tag="Daughter" data-color="#3b6fd6">
           <h3>My daughter</h3>
-          <p>An endlessly creative mind and a dreamer who also happens to outwork everyone in the room. We've spent a lot of nights looking up at the stars. Her favorite is Vega, which I'm fairly sure comes from years of asking "what's that blue one up there?" She also has a few freckles on her hand that line up almost exactly like the Summer Triangle, Vega included. She's been carrying her favorite star around the whole time.</p>
+          <p>An endlessly creative mind and a dreamer who also happens to outwork everyone in the room. We've spent a lot of nights looking up at the stars. Her favorite is Vega, which I'm fairly sure comes from years of asking "what's that blue one up there?" She also has a few freckles on her right hand that line up almost exactly like the little triangle at the top of Lyra, the constellation Vega anchors. She's been carrying her favorite star around the whole time.</p>
         </li>
         <li data-tag="Older son" data-color="#d2891c">
           <h3>My older son</h3>
