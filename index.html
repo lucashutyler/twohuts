@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Two Huts · Lucas Hutyler</title>
   <meta name="description" content="Lucas Hutyler. Software engineer since 2011, Liberty Lake, Washington. Two huts on a beach: one is me, the other is whoever I get to build with next.">
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f5e6c8'/%3E%3Cpath d='M8 30 L20 14 L32 30 Z M32 30 L44 14 L56 30 Z' fill='%23b8743a'/%3E%3Crect x='12' y='30' width='16' height='14' fill='%23e0b880'/%3E%3Crect x='36' y='30' width='16' height='14' fill='%23e0b880'/%3E%3Crect x='0' y='46' width='64' height='18' fill='%23d9c39a'/%3E%3C/svg%3E">
 </head>
@@ -239,39 +240,66 @@
         <p>That turned out to be the right answer. A project is simply more fun with someone else in it, and finishing something is better when there's somebody to high-five at the end. Over the years the second hut has been a lot of people.</p>
       </div>
 
-      <ul class="people">
-        <li>
+      <div class="hut-stage">
+        <div class="stage">
+          <svg class="stage-svg" viewBox="-170 -140 340 245" aria-hidden="true">
+            <ellipse cx="0" cy="92" rx="120" ry="10" fill="#c9a874" opacity=".5"/>
+            <use href="#hut"/>
+            <g class="visitors" transform="translate(0 36)"></g>
+          </svg>
+          <div class="visitor-blurb" aria-live="polite">
+            <h3 class="visitor-name">&nbsp;</h3>
+            <p class="visitor-text"></p>
+          </div>
+        </div>
+        <div class="cloud-wrap">
+          <p class="cloud-hint">Who's in the other hut right now? Pick someone.</p>
+          <div class="cloud" id="cloud"></div>
+        </div>
+      </div>
+
+      <!-- Data for the stage above, and the no-JavaScript fallback. -->
+      <ul class="people" id="people-data">
+        <li data-tag="Mom &amp; Dad" data-color="#c2553a" data-pair>
           <h3>My parents</h3>
           <p>Project people, through and through. They restored their cabin top to bottom, and I've gotten to help with a good chunk of it: framing walls, running electrical, building sheds. They return the favor whenever something at my house needs doing, which is often.</p>
         </li>
-        <li>
+        <li data-tag="Brother" data-color="#2f7d4f">
           <h3>My brother</h3>
           <p>He was taking things apart before he could read, and getting them back together came a little later. He's worked in HVAC and installed garage doors, and his mechanical and electrical instincts are better than most engineers I know. He's also the one who helped with that brake job. Some of my favorite evenings are just sitting with him talking about where technology is headed.</p>
         </li>
-        <li>
-          <h3>My daughter</h3>
-          <p>An endlessly creative mind and a dreamer who also happens to outwork everyone in the room. We've spent a lot of nights looking up at the stars. Her favorite is Vega, which I'm fairly sure comes from years of asking "what's that blue one up there?"</p>
+        <li data-tag="Wife" data-color="#b8437a">
+          <h3>My wife</h3>
+          <p>The most important person in the other hut, and the one who has heard "so I had an idea" more times than anyone alive. I owe this page a proper paragraph about her, and she knows it.</p>
         </li>
-        <li>
+        <li data-tag="Daughter" data-color="#3b6fd6">
+          <h3>My daughter</h3>
+          <p>An endlessly creative mind and a dreamer who also happens to outwork everyone in the room. We've spent a lot of nights looking up at the stars. Her favorite is Vega, which I'm fairly sure comes from years of asking "what's that blue one up there?" She also has a few freckles on her hand that line up almost exactly like the Summer Triangle, Vega included. She's been carrying her favorite star around the whole time.</p>
+        </li>
+        <li data-tag="Older son" data-color="#d2891c">
           <h3>My older son</h3>
           <p>Car-obsessed, and he has my brother's need to tear things down and understand them, which makes him a good extra set of hands in the garage. He also thinks big. In grade school he was buying two-liters of soda for 88 cents and reselling them at school, explaining to us that if he sold thousands, he'd have thousands of dollars. He's off to study Economics now, so the plan is proceeding.</p>
         </li>
-        <li>
+        <li data-tag="Younger son" data-color="#1f8a8a">
           <h3>My younger son</h3>
           <p>Likes to make a buck and doesn't mind getting his hands dirty to do it. If I ask for a hand with something around the house, the answer is yes before I've finished the question.</p>
         </li>
-        <li>
+        <li data-tag="Friends" data-color="#7a4a24" data-pair>
           <h3>My friends</h3>
           <p>A few of us have spun up a couple of LLCs over the years with ambitions to stop working for the man. None of them have panned out yet. The friendships did. We still get together on Saturdays to build something new, lately with AI in the mix, whether it's a business tool or a game we hope goes viral. It's a blast even when nothing ships.</p>
         </li>
-        <li>
+        <li data-tag="Teammates" data-color="#8a6a1f" data-pair>
           <h3>Startup Weekend and Sparks Weekend</h3>
           <p>I joined my first team on a whim and got hooked on the whole thing: rapid building, pivoting ideas, market research, throwing a pitch together, and the best part, seeing what everyone else built. I've been a team member, a mentor, and an organizer since, and a few of those weekend teammates turned into real friends.</p>
+        </li>
+        <li data-tag="You?" data-color="#5c4b3b">
+          <h3>Maybe you</h3>
+          <p>The hut has room. If you're working on something and want company, or you've got an idea that needs a second set of hands, the door's unlocked.</p>
         </li>
       </ul>
 
       <div class="prose">
-        <p>So the second hut stays open. If you're working on something and want company, the door's unlocked.</p>
+        <p>So the second hut stays open.</p>
       </div>
     </div>
   </section>
