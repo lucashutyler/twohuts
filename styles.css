@@ -344,3 +344,43 @@ html:not(.js) .hut-stage { display: none; }
   .stage { max-width: 360px; margin: 0 auto; }
   .visitor-blurb { min-height: 0; }
 }
+
+/* ---------- the 2017 sketch ---------- */
+.name-story {
+  display: grid;
+  grid-template-columns: 1fr minmax(240px, 340px);
+  gap: 1.5rem 3rem;
+  align-items: center;
+}
+.sketch {
+  margin: 0;
+  background: #fffdf7;
+  background-image: repeating-linear-gradient(to bottom, transparent 0 27px, rgba(120, 160, 200, .25) 27px 28px);
+  border: 1px solid var(--sand-deep);
+  border-radius: 6px;
+  padding: 1rem 1rem .6rem;
+  box-shadow: 0 8px 22px rgba(80, 40, 10, .1);
+  transform: rotate(-1.5deg);
+}
+.sketch-svg { width: 100%; height: auto; display: block; }
+.sketch figcaption { font-size: .8rem; color: var(--ink-soft); font-style: italic; text-align: center; margin-top: .4rem; }
+
+/* draw-on when scrolled into view */
+.sketch .ink path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.sketch .ink path[fill="#2b2118"] { fill-opacity: 0; }
+.sketch.drawn .ink path { animation: draw 1.1s ease-out forwards; }
+.sketch.drawn .stroke-group:nth-child(1) path { animation-delay: .1s; }
+.sketch.drawn .stroke-group:nth-child(2) path { animation-delay: .7s; }
+.sketch.drawn .stroke-group:nth-child(3) path { animation-delay: 1.6s; }
+.sketch.drawn .stroke-group:nth-child(4) path { animation-delay: 2.0s; }
+.sketch.drawn .stroke-group:nth-child(5) path { animation-delay: 2.9s; }
+.sketch.drawn .ink path[fill="#2b2118"] { animation-name: draw-fill; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes draw-fill { from { fill-opacity: 0; } 60% { fill-opacity: 0; stroke-dashoffset: 0; } to { stroke-dashoffset: 0; fill-opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .sketch .ink path { stroke-dashoffset: 0; fill-opacity: 1; animation: none !important; }
+}
+@media (max-width: 800px) {
+  .name-story { grid-template-columns: 1fr; }
+  .sketch { max-width: 320px; margin: .5rem auto 0; }
+}

@@ -183,6 +183,31 @@
     }, 600);
   }
 
+  /* ---------- 2017 sketch: draw itself when scrolled into view ---------- */
+  var sketch = document.querySelector('.sketch');
+  if (sketch) {
+    var drawn = false;
+    function drawSketch() {
+      if (drawn) return;
+      drawn = true;
+      sketch.classList.add('drawn');
+      window.removeEventListener('scroll', checkSketch);
+    }
+    function checkSketch() {
+      var r = sketch.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      if (r.top < vh * 0.8 && r.bottom > 0) drawSketch();
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { drawSketch(); io.disconnect(); } });
+      }, { threshold: 0.35 });
+      io.observe(sketch);
+    }
+    window.addEventListener('scroll', checkSketch, { passive: true });
+    checkSketch();
+  }
+
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 })();
