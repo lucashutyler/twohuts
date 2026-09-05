@@ -143,30 +143,25 @@ p { margin: 0 0 1em; }
   75% { transform: translate(6px, 6px) rotate(3deg); }
 }
 
-/* ---------- snorkeler: swims back and forth across the sea ---------- */
+/* ---------- snorkeler: drifts gently between the two huts ---------- */
 .snorkeler {
-  animation: snorkel-swim 24s ease-in-out infinite;
+  animation: snorkel-swim 48s ease-in-out infinite;
 }
-.snorkeler .bob { animation: snorkel-bob 1.7s ease-in-out infinite; }
-.snorkeler .flutter { animation: snorkel-kick .5s ease-in-out infinite; transform-origin: -14px 8px; }
+.snorkeler .bob { animation: snorkel-bob 3.2s ease-in-out infinite; }
 @keyframes snorkel-swim {
-  0%   { transform: translateX(-430px) scaleX(1); }
-  47%  { transform: translateX(430px) scaleX(1); }
-  50%  { transform: translateX(430px) scaleX(-1); }
-  97%  { transform: translateX(-430px) scaleX(-1); }
-  100% { transform: translateX(-430px) scaleX(1); }
+  0%   { transform: translateX(-160px) scaleX(1); }
+  48%  { transform: translateX(160px) scaleX(1); }
+  50%  { transform: translateX(160px) scaleX(-1); }
+  98%  { transform: translateX(-160px) scaleX(-1); }
+  100% { transform: translateX(-160px) scaleX(1); }
 }
 @keyframes snorkel-bob {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(3px); }
-}
-@keyframes snorkel-kick {
-  0%, 100% { transform: rotate(-8deg); }
-  50% { transform: rotate(10deg); }
+  50% { transform: translateY(2px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .wave, .hut .sign, .gull, .snorkeler, .snorkeler .bob, .snorkeler .flutter { animation: none; }
+  .wave, .hut .sign, .gull, .snorkeler, .snorkeler .bob { animation: none; }
 }
 
 .hut-captions {
@@ -284,7 +279,6 @@ p { margin: 0 0 1em; }
   .scene { top: auto; height: 62%; }
   .hut-captions { min-height: 0; }
   .caption { font-size: .92rem; }
-  .snorkel-scene { display: none; }
 }
 @media (max-width: 720px) {
   .topbar { padding: .85rem 1rem; }
