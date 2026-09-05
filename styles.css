@@ -124,12 +124,13 @@ p { margin: 0 0 1em; }
   0%, 100% { transform: rotate(-4deg); }
   50% { transform: rotate(4deg); }
 }
-.wave { animation: drift 6s linear infinite; }
-.wave.w2 { animation-duration: 8s; animation-direction: reverse; }
-.wave.w3 { animation-duration: 10s; }
+.wave { animation: drift 9s linear infinite; }
+.wave.w2 { animation-duration: 12s; animation-direction: reverse; }
+.wave.w3 { animation-duration: 15s; }
+/* Each wave repeats every 120 units (crest + trough), so shift a full period per loop. */
 @keyframes drift {
   from { transform: translateX(0); }
-  to { transform: translateX(-60px); }
+  to { transform: translateX(-120px); }
 }
 @media (prefers-reduced-motion: reduce) {
   .wave, .hut .sign { animation: none; }
