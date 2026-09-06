@@ -13,18 +13,19 @@
   }
 
   var pinned = null;
+  function toggle(id) {
+    if (pinned === id) { pinned = null; clear(); }
+    else { pinned = id; show(id); }
+  }
   huts.forEach(function (hut) {
     var id = hut.dataset.hut;
     hut.addEventListener('mouseenter', function () { if (!pinned) show(id); });
     hut.addEventListener('mouseleave', function () { if (!pinned) clear(); });
-    hut.addEventListener('focus', function () { show(id); });
+    hut.addEventListener('focus', function () { if (!pinned) show(id); });
     hut.addEventListener('blur', function () { if (!pinned) clear(); });
-    hut.addEventListener('click', function () {
-      if (pinned === id) { pinned = null; clear(); }
-      else { pinned = id; show(id); }
-    });
+    hut.addEventListener('click', function () { toggle(id); });
     hut.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hut.click(); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(id); }
     });
   });
 
@@ -82,6 +83,7 @@
     var current = -1;
     var stopped = false;
     var timer = null;
+    var swapTimer = null;
     var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // Word cloud: sizes and tilts follow a fixed pattern so it looks scattered but stays stable.
@@ -96,7 +98,7 @@
       b.textContent = p.title;
       b.setAttribute('aria-pressed', 'false');
       b.addEventListener('click', function () {
-        if (!stopped) { stopped = true; clearInterval(timer); }
+        if (!stopped) { stopped = true; clearTimeout(timer); blurb.setAttribute('aria-live', 'polite'); }
         select(i);
       });
       cloud.appendChild(b);
@@ -160,7 +162,8 @@
       visitors.appendChild(next);
 
       blurb.classList.add('swap');
-      setTimeout(function () {
+      clearTimeout(swapTimer);
+      swapTimer = setTimeout(function () {
         nameEl.textContent = p.title;
         textEl.innerHTML = p.html;
         blurb.classList.remove('swap');
@@ -176,10 +179,28 @@
     var pos = 0;
     function advance() { select(order[pos % order.length]); pos++; }
 
+    // Give each visitor time to be read (about 300ms a word, never under 9s), hold still while
+    // the pointer is over the stage, and for reduced-motion users let the first visitor stay put.
+    var paused = false;
+    var stage = blurb.closest('.stage');
+    if (stage) {
+      stage.addEventListener('mouseenter', function () { paused = true; });
+      stage.addEventListener('mouseleave', function () { paused = false; });
+    }
+    function dwell() {
+      var words = people[current].html.replace(/<[^>]*>/g, '').split(/\s+/).length;
+      return Math.max(9000, words * 300);
+    }
+    function tick() {
+      if (stopped) return;
+      if (!paused) advance();
+      timer = setTimeout(tick, dwell());
+    }
     setTimeout(function () {
       if (stopped) return;
       advance();
-      timer = setInterval(function () { if (!stopped) advance(); }, 7000);
+      if (reduced) return;
+      timer = setTimeout(tick, dwell());
     }, 600);
   }
 

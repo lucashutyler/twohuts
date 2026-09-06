@@ -5,9 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Two Huts · Lucas Hutyler</title>
   <meta name="description" content="Lucas Hutyler. Software engineer since 2011, Liberty Lake, Washington. Two huts on a beach: one is me, the other is whoever I get to build with next.">
+  <link rel="canonical" href="https://twohuts.com/">
+  <meta name="theme-color" content="#f6ecd8">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Two Huts">
+  <meta property="og:title" content="Two Huts · Lucas Hutyler">
+  <meta property="og:description" content="Software engineer since 2011, Liberty Lake, Washington. Two huts on a beach: one is me, the other is whoever I get to build with next.">
+  <meta property="og:url" content="https://twohuts.com/">
+  <meta property="og:image" content="https://twohuts.com/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Two thatched huts on a sunset beach. Text reads: Lucas Hutyler. Software engineer since 2011. Happiest building things with other people.">
+  <meta name="twitter:card" content="summary_large_image">
   <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f5e6c8'/%3E%3Cpath d='M8 30 L20 14 L32 30 Z M32 30 L44 14 L56 30 Z' fill='%23b8743a'/%3E%3Crect x='12' y='30' width='16' height='14' fill='%23e0b880'/%3E%3Crect x='36' y='30' width='16' height='14' fill='%23e0b880'/%3E%3Crect x='0' y='46' width='64' height='18' fill='%23d9c39a'/%3E%3C/svg%3E">
+  <link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
 
@@ -24,8 +38,8 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" aria-labelledby="hero-title">
-    <div class="scene" aria-hidden="true">
-      <svg viewBox="0 0 1200 620" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+    <div class="scene">
+      <svg viewBox="0 0 1200 620" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Two huts on a beach">
         <defs>
           <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0" stop-color="#fbe3b6"/>
@@ -194,16 +208,16 @@
     </div>
 
     <div class="hero-copy">
-      <p class="eyebrow">twohuts.com</p>
+      <p class="eyebrow">One hut is mine. The other is open.</p>
       <h1 id="hero-title">Lucas Hutyler</h1>
       <p class="lede">Software engineer since 2011. Happiest building things with other people.</p>
-      <p class="hint">Hover or tap a hut.</p>
+      <p class="hint">Pick a hut.</p>
     </div>
 
     <div class="hut-captions" aria-live="polite">
       <div class="caption" data-for="me">
         <strong>This hut is mine.</strong>
-        Liberty Lake, Washington, born and raised. Jeans, a t-shirt, running shoes. Writing software since 2011 and still enjoying it.
+        Liberty Lake, Washington, born and raised. Jeans, a t-shirt, running shoes. Writing software for a living and still enjoying it.
       </div>
       <div class="caption" data-for="you">
         <strong>This one is open.</strong>
@@ -213,14 +227,14 @@
   </section>
 
   <!-- ============ ABOUT ============ -->
-  <section id="about" class="section">
+  <section id="about" class="section alt">
     <div class="wrap">
       <h2>Who I am</h2>
       <div class="prose two-col">
         <div>
-          <p>I'm Lucas. I've lived in Liberty Lake, Washington, just outside Spokane, my whole life. The town motto is "Near nature, near perfect," and after a lifetime of checking, I'm not going to argue. Lakes, mountains, and, for the indecisive, mountain lakes.</p>
+          <p>I'm Lucas. I've lived my whole life in Liberty Lake, Washington, just outside Spokane. The town motto is "Near nature, near perfect," and after a lifetime of checking, I'm not going to argue. Lakes, mountains, and, for the indecisive, mountain lakes.</p>
+          <p>Dress code: jeans, a t-shirt, and running shoes. The running shoes are non-negotiable. I've worn them to places running shoes have no business being.</p>
           <p>I've been writing software professionally since 2011. Before that I wanted to build cars. More on that in a minute.</p>
-          <p>Dress code: jeans, a t-shirt, and running shoes. The running shoes are non-negotiable. I have worn them to places running shoes should probably not be worn.</p>
         </div>
         <div class="aside">
           <h3>When I'm not at a keyboard</h3>
@@ -228,8 +242,7 @@
             <li>Video games</li>
             <li>Boating</li>
             <li>Home improvement projects, some of them even finished</li>
-            <li>Science, especially alternative energy and energy storage, astronomy and space exploration, and wherever computing is headed next</li>
-            <li>Time with family and friends</li>
+            <li>Science, especially alternative energy and how to store it, astronomy and space exploration, and wherever computing is headed next</li>
           </ul>
         </div>
       </div>
@@ -237,12 +250,23 @@
   </section>
 
   <!-- ============ ORIGIN ============ -->
-  <section id="origin" class="section alt">
+  <section id="origin" class="section">
     <div class="wrap narrow">
       <h2>How I got here</h2>
       <div class="prose">
         <p>It started with a brake job. I had an old Pontiac Grand Am, the brakes were due, and my brother offered to help. We pulled the wheel off, then the caliper, and underneath was this whole intricate system that somebody had clearly thought very hard about. I remember standing in the driveway wondering how I would build something like that.</p>
-        <p>For a while the answer was "become an automotive engineer and make a car." That dream isn't dead, just resting. In the meantime I went to school for Math and Education, took a Computer Science class as an elective, and found it scratched exactly the same itch. The rest is history. Or at least it's in version control.</p>
+        <p>For a while the answer was "become an automotive engineer and build a car." That dream isn't dead, just resting. In the meantime I went to school for Math and Education, took a Computer Science class as an elective, and found it scratched exactly the same itch. The rest is history. Or at least it's in version control.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BUILDING (brief) ============ -->
+  <section id="building" class="section alt">
+    <div class="wrap narrow">
+      <h2>What I'm building</h2>
+      <div class="prose">
+        <p>By day I'm the Director of IT at Amphenol Network Solutions, though software has always been my favorite part of the job. On the side I'm working on Stepply, Zenosource, and Idle Party RPG, each with somebody in the other hut.</p>
+        <p><a class="button" href="projects.html">See the projects</a></p>
       </div>
     </div>
   </section>
@@ -254,10 +278,10 @@
       <div class="name-story">
         <div class="prose">
           <p>"Two huts" started as "two Hutylers." I sketched the pair in a notebook back in 2017, long before there was a website to put them on, and picked the name before I'd figured out who the second one was. Honestly, I never did.</p>
-          <p>That turned out to be the right answer. A project is simply more fun with someone else in it, and finishing something is better when there's somebody to high-five at the end. Over the years the second hut has been a lot of people.</p>
+          <p>Leaving it open turned out to be the right call. A project is more fun with someone else in it, and finishing one is better when there's somebody to high-five. Over the years the second hut has been a lot of people.</p>
         </div>
-      <figure class="sketch" aria-label="A ballpoint sketch of two thatched huts with TWOHUTS lettered underneath">
-        <svg class="sketch-svg" viewBox="0 0 400 404" xmlns="http://www.w3.org/2000/svg">
+      <figure class="sketch">
+        <svg class="sketch-svg" viewBox="0 0 400 404" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A ballpoint sketch of two thatched huts with TWOHUTS lettered underneath">
           <defs>
             <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
               <feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="7" result="n"/>
@@ -306,7 +330,7 @@
             </g>
           </g>
         </svg>
-        <figcaption>The original sketch, 2017. The name came before the plan.</figcaption>
+        <figcaption>The original sketch, 2017.</figcaption>
       </figure>
       </div>
 
@@ -317,8 +341,8 @@
             <use href="#hut"/>
             <g class="visitors" transform="translate(0 36)"></g>
           </svg>
-          <div class="visitor-blurb" aria-live="polite">
-            <h3 class="visitor-name">&nbsp;</h3>
+          <div class="visitor-blurb">
+            <p class="visitor-name">&nbsp;</p>
             <p class="visitor-text"></p>
           </div>
         </div>
@@ -336,35 +360,35 @@
         </li>
         <li data-tag="Brother" data-color="#2f7d4f">
           <h3>My brother</h3>
-          <p>He was taking things apart before he could read, and getting them back together came a little later. He's worked in HVAC and installed garage doors, and his mechanical and electrical instincts are better than most engineers I know. He's also the one who helped with that brake job. Some of my favorite evenings are just sitting with him talking about where technology is headed.</p>
+          <p>He was taking things apart before he could read, and getting them back together came a little later. He's worked in HVAC and installed garage doors, and he has better mechanical and electrical instincts than most engineers I know. He's also the one who helped with that brake job. Some of my favorite evenings are just sitting with him talking about where technology is headed.</p>
         </li>
         <li data-tag="Wife" data-color="#b8437a">
           <h3>My wife</h3>
-          <p>The one who has heard "so I had an idea" more times than anyone alive, and the one I've built the most with: raising our kids and building a home together. Every other hut in this section exists because of the life we built in this one first.</p>
+          <p>The one who has heard "so I had an idea" more times than anyone alive, and the one I've built the most with: raising our kids and making a home together. Everything else in this section rests on the life we built in this hut first.</p>
         </li>
         <li data-tag="Daughter" data-color="#3b6fd6">
           <h3>My daughter</h3>
-          <p>An endlessly creative mind and a dreamer who also happens to outwork everyone in the room. We've spent a lot of nights looking up at the stars. Her favorite is Vega, which I'm fairly sure comes from years of asking "what's that blue one up there?" She also has a few freckles on her right hand that line up almost exactly like the little triangle at the top of Lyra, the constellation Vega anchors. She's been carrying her favorite star around the whole time.</p>
+          <p>Endlessly creative, a dreamer who also happens to outwork everyone in the room. We've spent a lot of nights looking up at the stars. Her favorite is Vega, which I'm fairly sure comes from years of asking "what's that blue one up there?" She also has a few freckles on her right hand that line up almost exactly like the little triangle at the top of Lyra, the constellation Vega anchors. She's been carrying her favorite star around the whole time.</p>
         </li>
-        <li data-tag="Older son" data-color="#d2891c">
+        <li data-tag="Older son" data-color="#a86212">
           <h3>My older son</h3>
-          <p>Car-obsessed, and he has my brother's need to tear things down and understand them, which makes him a good extra set of hands in the garage. He also thinks big. In grade school he was buying two-liters of soda for 88 cents and reselling them at school, explaining to us that if he sold thousands, he'd have thousands of dollars. He's off to study Economics now, so the plan is proceeding.</p>
+          <p>Car-obsessed, with my brother's need to tear things down and understand them, which makes him handy to have in the garage. He also thinks big. In grade school he was buying two-liters of soda for 88 cents and reselling them at school, explaining to us that if he sold thousands, he'd have thousands of dollars. He's off to study Economics now, so the plan is proceeding.</p>
         </li>
         <li data-tag="Younger son" data-color="#1f8a8a">
           <h3>My younger son</h3>
-          <p>Likes to make a buck and doesn't mind getting his hands dirty to do it. If I ask for a hand with something around the house, the answer is yes before I've finished the question.</p>
+          <p>Likes to make a buck and doesn't mind getting his hands dirty to do it. If I ask for help with something around the house, the answer is yes before I've finished the question.</p>
         </li>
         <li data-tag="Friends" data-color="#7a4a24" data-pair>
           <h3>My friends</h3>
           <p>A few of us have spun up a couple of LLCs over the years with ambitions to stop working for the man. None of them have panned out yet. The friendships did. We still get together on Saturdays to build something new, lately with AI in the mix, whether it's a business tool or a game we hope goes viral. It's a blast even when nothing ships.</p>
         </li>
         <li data-tag="Teammates" data-color="#8a6a1f" data-pair>
-          <h3>Startup Weekend and Sparks Weekend</h3>
-          <p>I joined my first team on a whim and got hooked on the whole thing: rapid building, pivoting ideas, market research, throwing a pitch together, and the best part, seeing what everyone else built. I've been a team member, a mentor, and an organizer since, and a few of those weekend teammates turned into real friends.</p>
+          <h3>My weekend teammates</h3>
+          <p>Startup Weekend and Sparks Weekend. I joined my first team on a whim and got hooked on the whole thing: building fast, pivoting, figuring out whether anyone would actually pay for it, throwing a pitch together, and best of all, seeing what everyone else built. I've been a team member, a mentor, and an organizer since, and a few of those teammates turned into real friends.</p>
         </li>
         <li data-tag="You?" data-color="#5c4b3b">
           <h3>Maybe you</h3>
-          <p>The hut has room. If you're working on something and want company, or you've got an idea that needs a second set of hands, the door's unlocked.</p>
+          <p>The hut has room. If you're working on something and want company, or you've got an idea that needs a second set of hands, <a href="mailto:lucas@twohuts.com">the door's unlocked</a>.</p>
         </li>
       </ul>
 
@@ -374,22 +398,11 @@
     </div>
   </section>
 
-  <!-- ============ BUILDING (brief) ============ -->
-  <section id="building" class="section alt">
-    <div class="wrap narrow">
-      <h2>What I'm building</h2>
-      <div class="prose">
-        <p>By day I'm the Director of IT at Amphenol Network Solutions, though my heart has always been in the software side of the job. On the side I'm working on Stepply, Zenosource, and Idle Party RPG, each with somebody in the other hut.</p>
-        <p><a class="button" href="projects.html">See the projects</a></p>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <footer class="footer">
   <div class="wrap">
-    <p>© <span id="year"></span> Lucas Hutyler</p>
+    <p>© <span id="year">2026</span> Lucas Hutyler</p>
     <p class="links">
       <a href="mailto:lucas@twohuts.com">lucas@twohuts.com</a>
       <a href="https://github.com/lucashutyler">GitHub</a>
