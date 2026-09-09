@@ -7,6 +7,16 @@
   --ink: #2b2118;
   --ink-soft: #5c4b3b;
   --paper: #fffaf0;
+  --deep: #123a47;
+  --deep-line: #2a5361;
+  --surf: #fffaf0;
+  --sand-text: #f3e3c8;
+  --sun: #ffd27a;
+  --focus: #1f6b7c;
+  --hob-game: #33507f;
+  --hob-boat: #1f6b7c;
+  --hob-tool: #a8471f;
+  --hob-sci: #8a3f6b;
   --max: 1100px;
   --radius: 14px;
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -30,7 +40,6 @@ h3 { font-size: 1.25rem; }
 p { margin: 0 0 1em; }
 
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
-.wrap.narrow { max-width: 720px; }
 
 /* ---------- top bar ---------- */
 .topbar {
@@ -161,7 +170,7 @@ p { margin: 0 0 1em; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .wave, .hut .sign, .gull, .snorkeler, .snorkeler .bob { animation: none; }
+  .wave, .hut .sign, .gull, .snorkeler, .snorkeler .bob, .disc { animation: none; }
 }
 
 .hut-captions {
@@ -188,9 +197,68 @@ p { margin: 0 0 1em; }
 /* ---------- sections ---------- */
 .section { padding: clamp(3rem, 8vw, 5.5rem) 0; }
 .section.alt { background: var(--paper); }
+
+/* The page dips below the waterline for the origin story: the one dark band. */
+.section.deep {
+  position: relative;
+  overflow: hidden;
+  background: var(--deep);
+  color: var(--sand-text);
+  --focus: var(--sun);
+  padding: clamp(2.4rem, 5vw, 4rem) 0 clamp(3rem, 7vw, 4.5rem);
+}
+.section.deep > .wrap { position: relative; z-index: 1; }
+/* Light coming down through the water, so the band has a source and a direction. */
+.shafts { position: absolute; inset: 0 0 auto; height: 100%; pointer-events: none; }
+.shafts svg { width: 100%; height: 100%; display: block; filter: blur(26px); }
+.section.deep h2 { color: var(--paper); }
+.section.deep .prose { color: var(--sand-text); }
+.section.deep a { color: var(--sun); }
+
+/* Wave edges between the sand-lit sections and the deep one. */
+.tide { background: var(--sand); line-height: 0; }
+.tide-up { background: var(--paper); }
+.tide svg { display: block; width: 100%; height: clamp(34px, 4.5vw, 62px); }
+.tide-up svg { transform: scaleY(-1); }
+
+/* Origin: story column beside the thing that started it. */
+.origin-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+  gap: 1.5rem 3.5rem;
+  align-items: center;
+}
+.origin-grid .prose { max-width: none; }
+.rotor { margin: 0; }
+.rotor svg { width: 100%; height: auto; display: block; }
+.disc { animation: rotor-spin 90s linear infinite; transform-origin: 210px 200px; }
+@keyframes rotor-spin { to { transform: rotate(360deg); } }
+
+/* The line the whole story turns on, finally set like it matters. */
+.pull {
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2.5vw, 1.85rem);
+  line-height: 1.28;
+  color: var(--sun);
+  max-width: 24ch;
+  margin: clamp(1.4rem, 3vw, 2rem) 0;
+  padding-left: 1.1rem;
+  border-left: 4px solid var(--sun);
+}
+
+/* "What I'm building" is a signpost, not a chapter: give it a slim band. */
+.section.strip { padding: clamp(1.9rem, 4vw, 2.6rem) 0; }
+.strip-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.2rem 2.5rem;
+  align-items: center;
+}
+.strip h2 { font-size: clamp(1.3rem, 2.2vw, 1.65rem); margin-bottom: .35em; }
+.strip p { margin: 0; color: var(--ink-soft); max-width: 64ch; }
 .section-intro { color: var(--ink-soft); max-width: 60ch; margin-bottom: 2rem; }
 .prose { max-width: 62ch; font-size: 1.05rem; }
-.prose.two-col { max-width: none; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.prose.two-col { max-width: none; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); gap: 2.5rem; align-items: start; }
 
 /* ---------- project cards ---------- */
 .cards {
@@ -230,9 +298,35 @@ p { margin: 0 0 1em; }
 .people li { border-top: 2px solid var(--sand-deep); padding-top: 1rem; }
 .people h3 { color: var(--wood); margin-bottom: .3rem; }
 .people p { margin: 0; color: var(--ink-soft); }
-.aside h3 { color: var(--wood); font-size: 1.1rem; }
-.plain-list { padding-left: 1.1rem; margin: 0; color: var(--ink-soft); }
-.plain-list li { margin-bottom: .35rem; }
+.aside {
+  background: var(--paper);
+  border: 1px solid var(--sand-deep);
+  border-radius: 18px;
+  padding: 1.4rem 1.5rem 1.5rem;
+}
+.aside h3 { color: var(--wood); font-size: 1.1rem; margin-bottom: 1rem; }
+.hobbies { list-style: none; padding: 0; margin: 0; display: grid; gap: .9rem; }
+.hob {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: .9rem;
+  align-items: start;
+  color: var(--ink-soft);
+  font-size: .95rem;
+}
+.hob .ico {
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  background: var(--tint);
+  color: var(--c);
+  display: grid;
+  place-items: center;
+}
+.hob .ico svg { width: 26px; height: 26px; display: block; }
+.hob-game { --c: var(--hob-game); --tint: #e6ebf4; }
+.hob-boat { --c: var(--hob-boat); --tint: #e2eef1; }
+.hob-tool { --c: var(--hob-tool); --tint: #f6e6de; }
+.hob-sci  { --c: var(--hob-sci);  --tint: #f2e5ee; }
 
 .button {
   display: inline-block;
@@ -275,6 +369,13 @@ p { margin: 0 0 1em; }
   .hut-captions { min-height: 0; }
   .caption { font-size: .92rem; }
 }
+@media (max-width: 860px) {
+  .prose.two-col { grid-template-columns: 1fr; gap: 1.75rem; }
+  .origin-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+  .rotor { max-width: 250px; margin: 0 auto; }
+  .strip-inner { grid-template-columns: 1fr; }
+  .pull { max-width: none; }
+}
 @media (max-width: 720px) {
   .topbar { padding: .85rem 1rem; }
   .topbar nav a { margin-left: .8rem; font-size: .85rem; }
@@ -290,18 +391,28 @@ p { margin: 0 0 1em; }
 .js .people { display: none; }
 html:not(.js) .hut-stage { display: none; }
 
-.hut-stage {
+.hut-stage { display: grid; gap: .5rem; margin: 1.25rem 0 1.5rem; }
+.stage {
   display: grid;
-  grid-template-columns: minmax(280px, 400px) 1fr;
-  gap: 2rem 3.5rem;
-  align-items: start;
-  margin: 2rem 0 1.5rem;
+  grid-template-columns: minmax(0, 300px) 1fr;
+  gap: 1rem 3rem;
+  align-items: center;
 }
-.stage-svg { width: 100%; height: auto; display: block; overflow: visible; }
-.visitor-blurb { min-height: 8rem; transition: opacity .3s ease; padding: 0 .25rem; }
+.stage-svg { width: 100%; height: auto; display: block; overflow: visible; --win: #ffd98a; }
+.visitor-blurb { min-height: 7rem; transition: opacity .3s ease; padding: 0 .25rem; max-width: 60ch; }
 .visitor-blurb.swap { opacity: 0; }
 .visitor-name { color: var(--wood); margin: .5rem 0 .3rem; font-size: 1.3rem; font-family: var(--serif); font-weight: 700; line-height: 1.15; }
 .visitor-text { margin: 0; color: var(--ink-soft); }
+
+.closer {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3.4vw, 2.5rem);
+  line-height: 1.2;
+  color: var(--wood);
+  margin: clamp(2rem, 5vw, 3.2rem) 0 0;
+  padding-top: clamp(1.6rem, 4vw, 2.4rem);
+  border-top: 2px solid var(--sand-deep);
+}
 
 .cloud-hint { color: var(--ink-soft); font-size: .95rem; text-align: center; margin-bottom: 1rem; }
 .cloud {
@@ -330,7 +441,7 @@ html:not(.js) .hut-stage { display: none; }
 .chip.s2 { font-size: 1.2rem; }
 .chip.s3 { font-size: 1.5rem; }
 .chip:hover, .chip:focus-visible { transform: rotate(0deg) translateY(-2px) scale(1.05); border-color: var(--chip); }
-.chip:focus-visible { outline: 3px solid var(--sea-deep); outline-offset: 3px; }
+.chip:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
 .chip[aria-pressed="true"] {
   background: var(--chip);
   border-color: var(--chip);
@@ -364,17 +475,16 @@ html:not(.js) .hut-stage { display: none; }
 }
 
 @media (max-width: 800px) {
-  .hut-stage { grid-template-columns: 1fr; gap: 1rem; }
-  .stage { max-width: 360px; margin: 0 auto; }
+  .stage { grid-template-columns: 1fr; gap: .5rem; max-width: 360px; margin: 0 auto; }
   .visitor-blurb { min-height: 0; }
 }
 
 /* ---------- the 2017 sketch ---------- */
 .name-story {
   display: grid;
-  grid-template-columns: 1fr minmax(240px, 340px);
+  grid-template-columns: 1fr minmax(220px, 300px);
   gap: 1.5rem 3rem;
-  align-items: center;
+  align-items: start;
 }
 .sketch {
   margin: 0;
