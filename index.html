@@ -83,8 +83,8 @@
             </g>
             <rect x="-14" y="-16" width="28" height="52" rx="3" fill="#6f4222"/>
             <circle cx="8" cy="12" r="2" fill="#e9c07a"/>
-            <rect x="-52" y="-24" width="24" height="22" rx="2" fill="#8fd3df"/>
-            <rect x="28" y="-24" width="24" height="22" rx="2" fill="#8fd3df"/>
+            <rect x="-52" y="-24" width="24" height="22" rx="2" fill="var(--win, #8fd3df)"/>
+            <rect x="28" y="-24" width="24" height="22" rx="2" fill="var(--win, #8fd3df)"/>
             <g stroke="#7a4a24" stroke-width="2">
               <line x1="-40" y1="-24" x2="-40" y2="-2"/>
               <line x1="-52" y1="-13" x2="-28" y2="-13"/>
@@ -227,7 +227,7 @@
   </section>
 
   <!-- ============ ABOUT ============ -->
-  <section id="about" class="section alt">
+  <section id="about" class="section">
     <div class="wrap">
       <h2>Who I am</h2>
       <div class="prose two-col">
@@ -238,11 +238,23 @@
         </div>
         <div class="aside">
           <h3>When I'm not at a keyboard</h3>
-          <ul class="plain-list">
-            <li>Video games</li>
-            <li>Boating</li>
-            <li>Home improvement projects, some of them even finished</li>
-            <li>Science, especially alternative energy and how to store it, astronomy and space exploration, and wherever computing is headed next</li>
+          <ul class="hobbies">
+            <li class="hob hob-game">
+              <span class="ico" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="5" y="16" width="38" height="20" rx="10" fill="none" stroke="currentColor" stroke-width="3.4"/><path d="M14 22v8M10 26h8" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><circle cx="33" cy="23.5" r="2.9" fill="currentColor"/><circle cx="38" cy="29" r="2.9" fill="currentColor"/></svg></span>
+              <span>Video games</span>
+            </li>
+            <li class="hob hob-boat">
+              <span class="ico" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 29h34l-6 9H13z" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round"/><path d="M25 26V7l14 19H25" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round"/><path d="M19 26V14l-8 12" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round"/></svg></span>
+              <span>Boating</span>
+            </li>
+            <li class="hob hob-tool">
+              <span class="ico" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M32 6a9 9 0 0 0-8.4 12.2L8.1 33.7a4 4 0 1 0 5.7 5.7l15.5-15.5A9 9 0 1 0 32 6z" fill="currentColor"/><path d="M32.5 6.5l-5.4 5.4 5.1 5.1 5.4-5.4z" fill="var(--tint)"/></svg></span>
+              <span>Home improvement projects, some of them even finished</span>
+            </li>
+            <li class="hob hob-sci">
+              <span class="ico" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="25" cy="24" r="10.5" fill="currentColor"/><ellipse cx="25" cy="24" rx="20.5" ry="6.8" fill="none" stroke="currentColor" stroke-width="3.2" transform="rotate(-22 25 24)"/><path d="M7.5 8l1.5 3.2 3.2 1.5-3.2 1.5L7.5 18 6 14.2 2.8 12.7 6 11.2z" fill="currentColor"/></svg></span>
+              <span>Science, especially alternative energy and how to store it, astronomy and space exploration, and wherever computing is headed next</span>
+            </li>
           </ul>
         </div>
       </div>
@@ -250,24 +262,107 @@
   </section>
 
   <!-- ============ ORIGIN ============ -->
-  <section id="origin" class="section">
-    <div class="wrap narrow">
+  <div class="tide" aria-hidden="true">
+    <svg viewBox="0 0 1200 70" preserveAspectRatio="none">
+      <path d="M0 30 C200 6 400 50 600 26 C800 2 1000 46 1200 22 L1200 70 L0 70 Z" fill="var(--deep)"/>
+      <path d="M0 30 C200 6 400 50 600 26 C800 2 1000 46 1200 22" fill="none" stroke="var(--surf)" stroke-width="5" opacity=".7"/>
+    </svg>
+  </div>
+  <section id="origin" class="section deep">
+    <div class="shafts" aria-hidden="true">
+      <svg viewBox="0 0 1200 420" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="shaft" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffd27a" stop-opacity=".17"/>
+            <stop offset="0.55" stop-color="#ffd27a" stop-opacity=".06"/>
+            <stop offset="1" stop-color="#ffd27a" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <g fill="url(#shaft)">
+          <polygon points="150,0 250,0 90,420 -40,420"/>
+          <polygon points="430,0 496,0 350,420 262,420" opacity=".7"/>
+          <polygon points="880,0 1010,0 900,420 800,420" opacity=".6"/>
+        </g>
+      </svg>
+    </div>
+    <div class="wrap">
       <h2>How I got here</h2>
-      <div class="prose">
-        <p>It started with a brake job. I had an old Pontiac Grand Am, the brakes were due, and my brother offered to help. We pulled the wheel off, then the caliper, and underneath was this whole intricate system that somebody had clearly thought very hard about. I remember standing in the driveway wondering how I would build something like that.</p>
-        <p>For a while the answer was "become an automotive engineer and build a car." That dream isn't dead, just resting. In the meantime I went to school for Math and Education, took a Computer Science class as an elective, and found it scratched exactly the same itch. The rest is history. Or at least it's in version control.</p>
+      <div class="origin-grid">
+        <div class="prose">
+          <p>It started with a brake job. I had an old Pontiac Grand Am, the brakes were due, and my brother offered to help. We pulled the wheel off, then the caliper, and underneath was this whole intricate system that somebody had clearly thought very hard about.</p>
+          <p class="pull">I remember standing in the driveway wondering how I would build something like that.</p>
+          <p>For a while the answer was "become an automotive engineer and build a car." That dream isn't dead, just resting. In the meantime I went to school for Math and Education, took a Computer Science class as an elective, and found it scratched exactly the same itch. The rest is history. Or at least it's in version control.</p>
+        </div>
+        <figure class="rotor" aria-hidden="true">
+          <svg viewBox="0 0 420 420">
+            <defs>
+              <radialGradient id="worklight" cx="50%" cy="44%" r="56%">
+                <stop offset="0" stop-color="#ffd27a" stop-opacity=".26"/>
+                <stop offset="1" stop-color="#ffd27a" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="discface" x1="0.15" y1="0" x2="0.6" y2="1">
+                <stop offset="0" stop-color="#93abb5"/><stop offset="1" stop-color="#57707a"/>
+              </linearGradient>
+              <linearGradient id="hubface" x1="0.2" y1="0" x2="0.6" y2="1">
+                <stop offset="0" stop-color="#c0d0d6"/><stop offset="1" stop-color="#7b929b"/>
+              </linearGradient>
+            </defs>
+            <circle cx="210" cy="200" r="205" fill="url(#worklight)"/>
+            <path d="M292 96 C330 66 356 60 384 76" fill="none" stroke="#22333b" stroke-width="12" stroke-linecap="round"/>
+            <path d="M292 96 C330 66 356 60 384 76" fill="none" stroke="#3d545c" stroke-width="5" stroke-linecap="round"/>
+            <g class="disc">
+              <circle cx="210" cy="200" r="150" fill="#3b4f58"/>
+              <circle cx="210" cy="200" r="142" fill="url(#discface)"/>
+              <circle cx="210" cy="200" r="119" fill="none" stroke="#48606a" stroke-width="2" opacity=".75"/>
+              <g fill="#384b54">
+                <circle cx="210" cy="70" r="7"/><circle cx="302" cy="108" r="7"/><circle cx="340" cy="200" r="7"/>
+                <circle cx="302" cy="292" r="7"/><circle cx="210" cy="330" r="7"/><circle cx="118" cy="292" r="7"/>
+                <circle cx="80" cy="200" r="7"/><circle cx="118" cy="108" r="7"/>
+              </g>
+              <g stroke="#48606a" stroke-width="5" stroke-linecap="round" opacity=".85">
+                <line x1="210" y1="105" x2="210" y2="135"/><line x1="284" y1="136" x2="263" y2="157"/>
+                <line x1="315" y1="200" x2="285" y2="200"/><line x1="284" y1="264" x2="263" y2="243"/>
+                <line x1="210" y1="295" x2="210" y2="265"/><line x1="136" y1="264" x2="157" y2="243"/>
+                <line x1="105" y1="200" x2="135" y2="200"/><line x1="136" y1="136" x2="157" y2="157"/>
+              </g>
+              <circle cx="210" cy="200" r="72" fill="#2f434b"/>
+              <circle cx="210" cy="200" r="64" fill="url(#hubface)"/>
+              <circle cx="210" cy="200" r="25" fill="#384b54"/>
+              <g fill="#5d757f" stroke="#2f434b" stroke-width="2">
+                <circle cx="210" cy="155" r="10"/><circle cx="253" cy="186" r="10"/><circle cx="236" cy="236" r="10"/>
+                <circle cx="184" cy="236" r="10"/><circle cx="167" cy="186" r="10"/>
+              </g>
+            </g>
+            <g transform="translate(210 200) rotate(40) translate(0 -142)">
+              <rect x="-52" y="-34" width="104" height="68" rx="16" fill="#9c4020"/>
+              <rect x="-52" y="-34" width="104" height="30" rx="15" fill="#bb5a2c"/>
+              <rect x="-33" y="-13" width="66" height="30" rx="8" fill="#722f14"/>
+              <g fill="#e9cba4">
+                <circle cx="-36" cy="-22" r="5.5"/><circle cx="36" cy="-22" r="5.5"/>
+                <circle cx="-36" cy="22" r="5.5"/><circle cx="36" cy="22" r="5.5"/>
+              </g>
+            </g>
+          </svg>
+        </figure>
       </div>
     </div>
   </section>
 
+  <div class="tide tide-up" aria-hidden="true">
+    <svg viewBox="0 0 1200 70" preserveAspectRatio="none">
+      <path d="M0 30 C200 6 400 50 600 26 C800 2 1000 46 1200 22 L1200 70 L0 70 Z" fill="var(--deep)"/>
+      <path d="M0 30 C200 6 400 50 600 26 C800 2 1000 46 1200 22" fill="none" stroke="var(--surf)" stroke-width="5" opacity=".7"/>
+    </svg>
+  </div>
+
   <!-- ============ BUILDING (brief) ============ -->
-  <section id="building" class="section alt">
-    <div class="wrap narrow">
-      <h2>What I'm building</h2>
-      <div class="prose">
+  <section id="building" class="section alt strip">
+    <div class="wrap strip-inner">
+      <div>
+        <h2>What I'm building</h2>
         <p>By day I'm the Director of IT at Amphenol Network Solutions, though software has always been my favorite part of the job. On the side I'm working on Stepply, Zenosource, and Idle Party RPG, each with somebody in the other hut.</p>
-        <p><a class="button" href="projects.html">See the projects</a></p>
       </div>
+      <a class="button" href="projects.html">See the projects</a>
     </div>
   </section>
 
@@ -335,6 +430,10 @@
       </div>
 
       <div class="hut-stage">
+        <div class="cloud-wrap">
+          <p class="cloud-hint">Who's in the other hut right now? Pick someone.</p>
+          <div class="cloud" id="cloud"></div>
+        </div>
         <div class="stage">
           <svg class="stage-svg" viewBox="-170 -140 340 245" aria-hidden="true">
             <ellipse cx="0" cy="92" rx="120" ry="10" fill="#c9a874" opacity=".5"/>
@@ -346,15 +445,11 @@
             <p class="visitor-text"></p>
           </div>
         </div>
-        <div class="cloud-wrap">
-          <p class="cloud-hint">Who's in the other hut right now? Pick someone.</p>
-          <div class="cloud" id="cloud"></div>
-        </div>
       </div>
 
       <!-- Data for the stage above, and the no-JavaScript fallback. -->
       <ul class="people" id="people-data">
-        <li data-tag="Mom &amp; Dad" data-color="#c2553a" data-pair>
+        <li data-tag="Mom &amp; Dad" data-color="#b04a2e" data-pair>
           <h3>My parents</h3>
           <p>Project people, through and through. They restored their cabin top to bottom, and I've gotten to help with a good chunk of it: framing walls, running electrical, building sheds. They return the favor whenever something at my house needs doing, which is often.</p>
         </li>
@@ -374,7 +469,7 @@
           <h3>My older son</h3>
           <p>Car-obsessed, with my brother's need to tear things down and understand them, which makes him handy to have in the garage. He also thinks big. In grade school he was buying two-liters of soda for 88 cents and reselling them at school, explaining to us that if he sold thousands, he'd have thousands of dollars. He's off to study Economics now, so the plan is proceeding.</p>
         </li>
-        <li data-tag="Younger son" data-color="#1f8a8a">
+        <li data-tag="Younger son" data-color="#16736f">
           <h3>My younger son</h3>
           <p>Likes to make a buck and doesn't mind getting his hands dirty to do it. If I ask for help with something around the house, the answer is yes before I've finished the question.</p>
         </li>
@@ -392,9 +487,7 @@
         </li>
       </ul>
 
-      <div class="prose">
-        <p>So the second hut stays open.</p>
-      </div>
+      <p class="closer">So the second hut stays open.</p>
     </div>
   </section>
 
